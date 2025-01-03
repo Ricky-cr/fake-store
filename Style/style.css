@@ -1,6 +1,25 @@
-*{
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0
-    ;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  /* border: 1px solid black; */
+}
+
+#container {
+  display: flex;
+  height: 100vh;
+}
+
+#aside {
+  justify-content: center;
+  align-items: center;
+
+  width: 20%;
+  padding: 0.7em;
+}
+
+li {
+  margin-top: 0.5rem;
+  list-style-type: none;
+  padding: 0.5rem;
 }
