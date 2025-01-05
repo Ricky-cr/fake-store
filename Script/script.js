@@ -5,19 +5,46 @@ const getData = async () => {
 
   try {
     const response = await axios.get(path);
-    buildParagraph(response.data);
     console.log(response.data);
+    newParagraph(response)
   } catch (error) {
     console.log('i dati non sono stati ricaricati');
   }
 };
 
-const buildParagraph = (data) => {
-  const products = document.getElementById('products');
-
+const newParagraph = (data) => {
+const container = document.getElementById("container")
+    console.log("Inizio Loop")
   for (let product of data.data) {
-    const paragraph = document.createElement('p');
+    const p = document.createElement("p")
+
+    // console.log(product)
+    for(let property in product){
+        
+        p.textContent = product.title
+        if(property === "image"){
+            
+            container.innerHTML = ("<img id=\"IMMAGINE\" src='" + product[property] + "'>")
+
+        }
+        
+        
+        
+
+        // console.log(property + " : " + product[property])
+        
+        console.log(product[property])
+        console.log(product.description)
+    }
+    container.append(p)
+    
+   
   }
+  
+  
+  
 };
 
 getData();
+
+
